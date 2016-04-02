@@ -123,6 +123,6 @@
     if ([[MIAJPushDelegate shareJPushDelegate] respondsToSelector:@selector(application:handleActionWithIdentifier:forLocalNotification:withResponseInfo:completionHandler:)]) {
         [[MIAJPushDelegate shareJPushDelegate] application:application handleActionWithIdentifier:identifier forLocalNotification:notification withResponseInfo:responseInfo completionHandler:completionHandler];
     }
-}*/
+}
 
-@end
+@end*/

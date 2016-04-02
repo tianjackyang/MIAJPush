@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MIAJPush"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "MIAJPush"
 
   # This description is used to generate tags and improve search results.
@@ -132,9 +132,7 @@ s.source       = { :git => "https://github.com/tianjackyang/MIAJPush.git", :tag 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
 
-  s.dependency "MIAJPush/JPush"
-
   s.subspec 'JPush' do |ss|
-    ss.source_fies = 'Pod/JPush/**/*.{h,m}'
+    ss.source_files = 'Pod/JPush/**/*.{h,m}'
   end
 end
