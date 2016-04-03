@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MIAJPush"
-  s.version      = "0.0.4"
+  s.version      = "0.0.5"
   s.summary      = "MIAJPush"
 
   # This description is used to generate tags and improve search results.
@@ -119,6 +119,7 @@ Pod::Spec.new do |s|
   # s.library   = "iconv"
   s.libraries = "z"
 
+  s.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  If your library depends on compiler flags you can set them in the xcconfig hash
@@ -132,7 +133,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'JPush' do |ss|
     ss.source_files = 'Pod/JPush/**/*.{h,m}'
-    ss.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
     ss.header_dir = 'JPush'
   end
 end
