@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MIAJPush"
-  s.version      = "0.0.3"
+  s.version      = "0.0.4"
   s.summary      = "MIAJPush"
 
   # This description is used to generate tags and improve search results.
@@ -79,7 +79,7 @@ Pod::Spec.new do |s|
   #  Specify the location from where the source should be retrieved.
   #  Supports git, hg, bzr, svn and HTTP.
   #
-s.source       = { :git => "https://github.com/tianjackyang/MIAJPush.git", :tag => s.version, :submodules => true } 
+  s.source       = { :git => "https://github.com/tianjackyang/MIAJPush.git", :tag => s.version, :submodules => true } 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  CocoaPods is smart about how it includes source code. For source files
@@ -88,7 +88,7 @@ s.source       = { :git => "https://github.com/tianjackyang/MIAJPush.git", :tag 
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Pod", "Pod/**/*.{h,m}"
+  s.source_files  = "Pod/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -119,7 +119,6 @@ s.source       = { :git => "https://github.com/tianjackyang/MIAJPush.git", :tag 
   # s.library   = "iconv"
   s.libraries = "z"
 
-  s.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  If your library depends on compiler flags you can set them in the xcconfig hash
@@ -133,5 +132,7 @@ s.source       = { :git => "https://github.com/tianjackyang/MIAJPush.git", :tag 
 
   s.subspec 'JPush' do |ss|
     ss.source_files = 'Pod/JPush/**/*.{h,m}'
+    ss.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
+    ss.header_dir = 'JPush'
   end
 end
