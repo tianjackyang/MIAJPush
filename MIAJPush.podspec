@@ -118,9 +118,8 @@ s.source       = { :git => "https://github.com/tianjackyang/MIAJPush.git", :tag 
 
   # s.library   = "iconv"
   s.libraries = "z"
-  
-  s.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
 
+  s.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  If your library depends on compiler flags you can set them in the xcconfig hash
