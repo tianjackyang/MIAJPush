@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MIAJPush"
-  s.version      = "0.0.9"
+  s.version      = "0.1.1"
   s.summary      = "MIAJPush"
 
   # This description is used to generate tags and improve search results.
@@ -140,6 +140,6 @@ Pod::Spec.new do |s|
     ss.dependency 'MIAJPush/JPush'
     ss.source_files = 'Pod/Core/**/*.{h,m}'
     ss.public_header_files = 'Pod/Core/**/*.{h}'
-    ss.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
+    ss.vendored_libraries = 'Pod/JPush/libjpush-ios-2.1.0.a'
   end
 end
