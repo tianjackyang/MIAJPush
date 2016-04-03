@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MIAJPush"
-  s.version      = "0.0.5"
+  s.version      = "0.0.6"
   s.summary      = "MIAJPush"
 
   # This description is used to generate tags and improve search results.
@@ -88,7 +88,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Pod/*.{h,m}"
+  # s.source_files  = "Pod/*.{h,m}"
   # s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
@@ -119,7 +119,7 @@ Pod::Spec.new do |s|
   # s.library   = "iconv"
   s.libraries = "z"
 
-  s.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
+
   # ――― Project Settings ――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
   #
   #  If your library depends on compiler flags you can set them in the xcconfig hash
@@ -130,9 +130,15 @@ Pod::Spec.new do |s|
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
+  
+  s.subspec 'Core' do |ss|
+    ss.dependency 'MIAJPush/JPush'
+    ss.source_files = 'Pod/Core/**/*.{h,m}'
+  end
 
   s.subspec 'JPush' do |ss|
     ss.source_files = 'Pod/JPush/**/*.{h,m}'
     ss.header_dir = 'JPush'
+    ss.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
   end
 end
