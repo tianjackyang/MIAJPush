@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MIAJPush"
-  s.version      = "0.0.6"
+  s.version      = "0.0.8"
   s.summary      = "MIAJPush"
 
   # This description is used to generate tags and improve search results.
@@ -131,14 +131,15 @@ Pod::Spec.new do |s|
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
   # s.dependency "JSONKit", "~> 1.4"
   
+  s.subspec 'JPush' do |ss|
+    ss.source_files = 'Pod/JPush/**/*.{h,m}'
+    ss.public_header_files = 'Pod/JPush/**/*.{h}'
+  end
+ 
   s.subspec 'Core' do |ss|
     ss.dependency 'MIAJPush/JPush'
     ss.source_files = 'Pod/Core/**/*.{h,m}'
-  end
-
-  s.subspec 'JPush' do |ss|
-    ss.source_files = 'Pod/JPush/**/*.{h,m}'
-    ss.header_dir = 'JPush'
+    ss.public_header_files = 'Pod/Core/**/*.{h}'
     ss.vendored_libraries = 'Pod/JPush/jpush-ios-2.1.0.a'
   end
 end
